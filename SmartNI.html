@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Smart NI</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<script src="js/echarts.min.js"></script>
+		<script src="js/createcharts.js"></script>
+	    <script type="text/javascript" src="js/index.js" ></script>
+	</head>
+	
+	<body>
+		<div class="outer">
+			<div class="nav" style="position:relative;">
+					<div class="nav-left">
+						<a href="index.html"><img class="logo" src="img/tubiaologo_03.png" /></a>
+					</div>
+					<div class="nav-right nav-right2">Philippines Smart NI Project</div>
+				<!--/国旗／时间-->
+				    <div class="chose chose2">
+						<div class="chose-area chose-l" style="cursor: pointer;">
+							<img  class="gq" src="img/shouye_06.png" style="margin-top:22px;"/>
+							<div class="chose-nation" style="display: none; ">
+								<div class="us nation">
+									<img src="img/1.png" />
+								</div>
+								<div class="ch nation">
+									<img src="img/2.png" />
+								</div>
+								<div class="cr nation">
+									<img src="img/3.png" />
+								</div>
+							</div>
+						</div>
+						<div class="time chose-l"></div>
+						<ul class="Npo_Ni" style="position:absolute;top:0;bottom:0;right:20px;margin:auto;">
+							<li class="active">NI</li>
+							<li><a href="index.html">NPO</a></li>
+						</ul>
+				   </div>
+			</div>
+			<!--内容区-->
+			<div class="conntent conntent2">
+                  <div class="top">
+					  <div class="map">
+						  <div class="con">
+							  <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d54663423.700323775!2d40.1
+					6300565898584!3d33.25626492650822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453
+					c569a896724fb%3A0x1409fdf86611f613!2z5L-E572X5pav!5e0!3m2!1szh-CN!2scn!4v1505984217295" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+						  </div>
+					  </div>
+					  <div class="right">
+						  <div class="one">
+							  <div class="con">
+								  <div>
+									  <iframe src="topright/index.html" frameborder="0" style="width:100%;height:80%;"></iframe>
+									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">LTW</div>
+								  </div>
+								  <div>
+									  <iframe src="topright/index2.html" frameborder="0" style="width:100%;height:80%;"></iframe>
+									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">STILT</div>
+								  </div>
+								  <div>
+									  <iframe src="topright/index3.html" frameborder="0" style="width:100%;height:80%;"></iframe>
+									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">PAT</div>
+								  </div>
+								  <div>
+									  <iframe src="topright/index4.html" frameborder="0" style="width:100%;height:80%;"></iframe>
+									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">SeQI</div>
+								  </div>
+								  <div>
+									  <iframe src="topright/index5.html" frameborder="0" style="width:100%;height:80%;"></iframe>
+									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">HHS</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div class="two">
+							  <div class="con" style="position:relative;">
+								  <div id="chart1" style="width:100%;height:100%;"></div>
+								  <ul class="Npo_Ni Npo_Ni2" style="position:absolute;top:6px;right:10px;">
+									  <li class="active">DAY</li>
+									  <li>MTH</li>
+								  </ul>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+				  <div class="bottom" style="position:relative;">
+					  <div class="left">
+						  <div class="con" style="position:relative;">
+							  <div id="chart2" style="width:100%;height:100%;"></div>
+							  <ul class="xuanze xuanze1">
+								  <li class='active' style="background:#90cdf0;float:left;">SQI</li>
+								  <li style="background:#e49557;position:absolute;left:0;right:0;margin:auto;">SeQI</li>
+								  <li style="background:#f3ce92;float:right;">HHS</li>
+							  </ul>
+						  </div>
+					  </div>
+					  <div class="center">
+						  <div class="con" style="position:relative;">
+							  <div id="chart3" style="width:100%;height:100%;"></div>
+							  <ul class="xuanze xuanze2">
+								  <li class='active' style="background:#90cdf0;float:left;">PAT</li>
+								  <li style="background:#e49557;position:absolute;left:0;right:0;margin:auto;">SA</li>
+								  <li style="background:#f3ce92;float:right;">FRA</li>
+							  </ul>
+						  </div>
+					  </div>
+					  <div class="right" style="position:relative">
+						  <div class="con" style="position:relative;">
+							  <div class="title">Top Lead Time Sites</div>
+							  <ul class="Npo_Ni Npo_Ni3" style="position:absolute;top:6px;right:10px;">
+								  <li class="active">1</li>
+								  <li>2</li>
+							  </ul>
+							  <div class="biaoge biaoge1">
+								  <ul>
+									  <li></li>
+									  <li>Site ID</li>
+									  <li>Lead time(day)</li>
+									  <li>Vender</li>
+								  </ul>
+								  <ul class="oushu">
+									  <li>1</li>
+									  <li>3462</li>
+									  <li>12.8</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul>
+									  <li>2</li>
+									  <li>3461</li>
+									  <li>12.7</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul class="oushu">
+									  <li>3</li>
+									  <li>3455</li>
+									  <li>11.3</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul>
+									  <li>4</li>
+									  <li>H37</li>
+									  <li>11.3</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul class="oushu">
+									  <li>5</li>
+									  <li>3745</li>
+									  <li>11.1</li>
+									  <li>YinDa</li>
+								  </ul>
+							  </div>
+							  <div class="biaoge biaoge2" style="display:none">
+								  <ul>
+									  <li></li>
+									  <li>Site ID</li>
+									  <li>Lead time(day)</li>
+									  <li>Vender</li>
+								  </ul>
+								  <ul class="oushu">
+									  <li>6</li>
+									  <li>3069</li>
+									  <li>10.9</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul>
+									  <li>7</li>
+									  <li>4339</li>
+									  <li>10.1</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul class="oushu">
+									  <li>8</li>
+									  <li>G5656</li>
+									  <li>10</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul>
+									  <li>9</li>
+									  <li>438</li>
+									  <li>10</li>
+									  <li>YinDa</li>
+								  </ul>
+								  <ul class="oushu">
+									  <li>10</li>
+									  <li>G9160</li>
+									  <li>10</li>
+									  <li>YinDa</li>
+								  </ul>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			</div>
+			<div class="foot">
+				Shanghai Yinda Technology Industrial Co.,Ltd Copyright@ 2012-2017 All Rights Reserved
+			</div>
+		</div>
+	</body>
+
+</html>
+
+
+
