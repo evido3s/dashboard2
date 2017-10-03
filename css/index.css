@@ -228,11 +228,11 @@ body{
 .conntent2 .bottom .center{padding-left:10px;padding-right:10px;box-sizing:border-box;}
 .conntent2 .bottom .right{padding-left:10px;box-sizing:border-box;}
 
-.xuanze{width:250px;height:25px;margin:0 auto;position:absolute;top:12%;left:0;right:0;margin:auto;}
-.xuanze li{float:left;width:55px;height:100%;line-height:25px;text-align:center;color:#fff;border-radius:3px;}
-.xuanze .active{border:2px solid #D3D3D3;box-sizing:border-box;}
+.xuanze{width:250px;height:20px;margin:0 auto;position:absolute;top:13%;left:0;right:0;margin:auto;}
+.xuanze li{float:left;width:40px;height:100%;line-height:20px;text-align:center;color:#fff;border-radius:3px;font-size:10px;}
+.xuanze .active{border:1px solid #D3D3D3;}
 
-.conntent2 .right .con .title{font-size:20px;color:#218be2;text-align:center;padding-top:6px;box-sizing:border-box;}
+.conntent2 .right .con .title{font-size:18px;color:#218be2;text-align:center;padding-top:4px;box-sizing:border-box;}
 .conntent2 .right .con .biaoge{
 	width:90%;height:82%;font-size:14px;
 	margin:0 auto;margin-top:5px;border:1px solid #d5d5d5;
