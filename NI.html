@@ -2,12 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Smart NI</title>
+		<title>NI</title>
 		<link rel="stylesheet" href="css/index.css" />
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
 		<script src="js/echarts.min.js"></script>
 		<script src="js/createcharts.js"></script>
 	    <script type="text/javascript" src="js/index.js" ></script>
+		<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAjfQ-KPy1yDgt2XvTY9Yen1LZ4MxG9ntA&sensor=false"></script>-->
 	</head>
 	
 	<body>
@@ -45,9 +46,7 @@
                   <div class="top">
 					  <div class="map">
 						  <div class="con">
-							  <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d54663423.700323775!2d40.1
-					6300565898584!3d33.25626492650822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453
-					c569a896724fb%3A0x1409fdf86611f613!2z5L-E572X5pav!5e0!3m2!1szh-CN!2scn!4v1505984217295" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+							  <iframe src="http://www.google.cn/maps/embed?pb=!1m18!1m12!1m3!1d61776.72449912199!2d120.94445431932536!3d14.596495677188226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0x69d1d5751069c11f!2z6I-y5b6L5a6-6ams5bC85ouJ5aSn6YO95Lya6ams5bC85ouJ!5e0!3m2!1szh-CN!2scn!4v1506292731559" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 						  </div>
 					  </div>
 					  <div class="right">
@@ -63,7 +62,7 @@
 								  </div>
 								  <div>
 									  <iframe src="topright/index3.html" frameborder="0" style="width:100%;height:80%;"></iframe>
-									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">PAT</div>
+									  <div style="width:100%;height:10%;line-height:15px;text-align:center;color:#4d96e4;">N/A</div>
 								  </div>
 								  <div>
 									  <iframe src="topright/index4.html" frameborder="0" style="width:100%;height:80%;"></iframe>
@@ -76,9 +75,34 @@
 							  </div>
 						  </div>
 						  <div class="two">
-							  <div class="con" style="position:relative;">
+							  <!--top-right-two-days柱状图-->
+							  <div class="con con_chart0" style="position:relative;float:left;overflow:hidden;">
+									  <div id="chart0" style="width:100%;height:100%;"></div>
+									  <ul class="xuanze xuanze0" style="width:100%;height:22px;line-height:22px;">
+										  <li class='active' style="background:#90cdf0;float:left;line-height:22px;">Plan</li>
+										  <li style="background:#e49557;margin-left:5px;line-height:22px;">Actual</li>
+									  </ul>
+									  <ul class="Npo_Ni Npo_Ni0" style="position:absolute;top:12%;right:10px;">
+										  <li class="active">DAYS</li>
+										  <li>TOTAL</li>
+									  </ul>
+							  </div>
+							  <!--top-right-two-total柱状图-->
+							  <div class="con con_chart01" style="position:relative;float:left;display:none;">
+								  <div id="chart01" style="width:100%;height:100%;"></div>
+								  <ul class="xuanze xuanze01" style="width:100%;height:22px;line-height:22px;">
+									  <li class='active' style="background:#90cdf0;float:left;line-height:22px;">Plan</li>
+									  <li style="background:#e49557;margin-left:5px;line-height:22px;">Actual</li>
+								  </ul>
+								  <ul class="Npo_Ni Npo_Ni0" style="position:absolute;top:12%;right:10px;">
+									  <li>DAYS</li>
+									  <li class="active">TOTAL</li>
+								  </ul>
+							  </div>
+
+							  <div class="con" style="position:relative;float:right;">
 								  <div id="chart1" style="width:100%;height:100%;"></div>
-								  <ul class="Npo_Ni Npo_Ni2" style="position:absolute;top:6px;right:10px;">
+								  <ul class="Npo_Ni Npo_Ni2" style="position:absolute;top:12%;right:10px;">
 									  <li class="active">DAY</li>
 									  <li>MTH</li>
 								  </ul>
@@ -89,7 +113,7 @@
 				  <div class="bottom" style="position:relative;">
 					  <div class="left">
 						  <div class="con" style="position:relative;">
-							  <div id="chart2" style="width:100%;height:100%;"></div>
+							  <div id="chart3" style="width:100%;height:100%;"></div>
 							  <ul class="xuanze xuanze1">
 								  <li class='active' style="background:#90cdf0;float:left;">SQI</li>
 								  <li style="background:#e49557;position:absolute;left:0;right:0;margin:auto;">SeQI</li>
@@ -99,18 +123,18 @@
 					  </div>
 					  <div class="center">
 						  <div class="con" style="position:relative;">
-							  <div id="chart3" style="width:100%;height:100%;"></div>
+							  <div id="chart2" style="width:100%;height:100%;"></div>
 							  <ul class="xuanze xuanze2">
-								  <li class='active' style="background:#90cdf0;float:left;">PAT</li>
-								  <li style="background:#e49557;position:absolute;left:0;right:0;margin:auto;">SA</li>
-								  <li style="background:#f3ce92;float:right;">FRA</li>
+								  <li class='active' style="background:#90cdf0;float:left;">SA</li>
+								  <li style="background:#e49557;position:absolute;left:0;right:0;margin:auto;">PAT</li>
+								  <li style="background:#f3ce92;float:right;">FAC</li>
 							  </ul>
 						  </div>
 					  </div>
 					  <div class="right" style="position:relative">
 						  <div class="con" style="position:relative;">
 							  <div class="title">Top Lead Time Sites</div>
-							  <ul class="Npo_Ni Npo_Ni3" style="position:absolute;top:6px;right:10px;">
+							  <ul class="Npo_Ni Npo_Ni3" style="width:60px;position:absolute;top:6px;right:10px;">
 								  <li class="active">1</li>
 								  <li>2</li>
 							  </ul>
@@ -194,12 +218,37 @@
 					  </div>
 				  </div>
 			</div>
-			<div class="foot">
+			<div class="foot" style="margin-top:5px;">
 				Shanghai Yinda Technology Industrial Co.,Ltd Copyright@ 2012-2017 All Rights Reserved
 			</div>
 		</div>
 	</body>
+	<!--<script>-->
+        <!--function initialize()-->
+        <!--{-->
+            <!--var mapProp = {-->
+                <!--center:new google.maps.LatLng(51.508742,-0.120850),-->
+                <!--zoom:5,-->
+                <!--mapTypeId:google.maps.MapTypeId.ROADMAP-->
+            <!--};-->
+            <!--var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);-->
 
+            <!--var marker = new google.maps.Marker(-->
+                <!--{-->
+                    <!--position:latlng,-->
+                    <!--map:map-->
+                <!--});-->
+            <!--// 设定标注窗口，附上注释文字-->
+            <!--var infowindow = new google.maps.InfoWindow(-->
+                <!--{-->
+                    <!--content:"SiteID"-->
+                <!--});-->
+            <!--// 打开标注窗口-->
+            <!--infowindow.open(map,marker);-->
+        <!--}-->
+
+        <!--google.maps.event.addDomListener(window, 'load', initialize);-->
+	<!--</script>-->
 </html>
 
 

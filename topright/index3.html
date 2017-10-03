@@ -18,11 +18,12 @@
 		}
 		.barPie__value{font-size:20px;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;text-align:center;color:#000;}
 		.barPie__ring :checked ~ .barPie__ring__item::before{background: rgba(0, 255, 0, 0.8);}
+		.barPie__value::after{    content: '';}
 	</style>
 </head>
 <body>
 	<div class="htmleaf-container">
-		<div data-to-value='0' data-items-count='32' id="p1_barPie" class="barPie barPie--radio">
+		<div data-to-value='--' data-items-count='32' id="p1_barPie" class="barPie barPie--radio">
 		  <span class="barPie__value">0</span>
 		  <div class="barPie__ring">
 		    <input type="radio" name="barPieRadioGroup" id="p1_barPieItem31" value="100" hidden="hidden"/>
