@@ -189,7 +189,6 @@ body{
 	font-size:12px;
 }
 /*=============================NI.html====================================*/
-
 .nav-right2{
 	width:400px;height:100%;
 	line-height:70px;text-align:center;
@@ -207,15 +206,15 @@ body{
 .Npo_Ni a{text-decoration:none;color:#fff;}
 .Npo_Ni .active{background:#4d96e4;}
 
-.conntent2 .top{width:100%;height:60%;}
-.conntent2 .bottom{width:100%;height:40%;}
+.conntent2 .top{width:100%;height:65%;}
+.conntent2 .bottom{width:100%;height:35%;}
 .conntent2 .bottom{padding-top:20px;box-sizing:border-box;}
 .conntent2 .top .map,.conntent2 .top .right{
 	width:50%;height:100%;float:left;
 }
 .conntent2 .top .right{float:right;padding-left:20px;box-sizing:border-box;}
-.conntent2 .top .right .one{width:100%;height:40%;}
-.conntent2 .top .right .two{width:100%;height:60%;}
+.conntent2 .top .right .one{width:100%;height:35%;}
+.conntent2 .top .right .two{width:100%;height:65%;}
 .conntent2 .top .right .one{padding-bottom:20px;box-sizing:border-box;}
 .conntent2 .top .right .one .con div{width:16.6%;height:100%;float:left}
 .conntent2 .con{width:100%;height:100%;background:#fff;}

@@ -13,9 +13,9 @@
                   }
               },
               title: {
-                  text:"Timing keep Trend",
+                  text:"Milestone Tracking",
                   textStyle: {
-                      fontSize: 20,
+                      fontSize:18,
                       fontWeight:'normal',
                       color:'#218be2',            //标题颜色
                   },
@@ -109,7 +109,7 @@
               title: {
                   text:"Timing keep Trend",
                   textStyle: {
-                      fontSize: 20,
+                      fontSize:18,
                       fontWeight:'normal',
                       color:'#218be2',            //标题颜色
                   },
@@ -200,7 +200,7 @@
               title: {
                   text:"Timing keep Trend",
                   textStyle: {
-                      fontSize: 20,
+                      fontSize:18,
                       fontWeight:'normal',
                       color:'#218be2',            //标题颜色
                   },
@@ -319,7 +319,7 @@
                   title: {
                       text:"Report Approve Stage",
                       textStyle: {
-                          fontSize: 20,
+                          fontSize:18,
                           fontWeight:'normal',
                           color:'#218be2',            //标题颜色
                       },
@@ -410,7 +410,7 @@
               title: {
                   text:"Monthly Quality&Safety Index",
                   textStyle: {
-                      fontSize: 20,
+                      fontSize:18,
                       fontWeight:'normal',
                       color:'#218be2',            //标题颜色
                   },
