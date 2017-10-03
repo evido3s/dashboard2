@@ -32,6 +32,7 @@
                       type : 'value',
                       axisLabel: {
                           show: true,
+
                           textStyle: {
                               color: '#218be2'
                           }
@@ -53,6 +54,8 @@
                       },
                       axisLabel: {
                           show: true,
+                          interval: 0, // 设置文本标签全部显示
+                          // rotate: 45,
                           textStyle: {
                               color: '#218be2'   //x轴字体颜色
                           },
