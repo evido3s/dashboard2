@@ -202,6 +202,7 @@ body{
 }
 .Npo_Ni li{
 	width:50%;height:100%;float:left;line-height:20px;text-align:center;
+	font-size:10px;font-size:10px;
 }
 .Npo_Ni a{text-decoration:none;color:#fff;}
 .Npo_Ni .active{background:#4d96e4;}
