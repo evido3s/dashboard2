@@ -8,6 +8,7 @@
 		<script src="js/echarts.min.js"></script>
 		<script src="js/createcharts.js"></script>
 	    <script type="text/javascript" src="js/index.js" ></script>
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAjfQ-KPy1yDgt2XvTY9Yen1LZ4MxG9ntA&sensor=false"></script>
 		<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAjfQ-KPy1yDgt2XvTY9Yen1LZ4MxG9ntA&sensor=false"></script>-->
 	</head>
 	
@@ -46,7 +47,7 @@
                   <div class="top">
 					  <div class="map">
 						  <div class="con">
-							  <iframe src="map.html" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+							  <div id="map" style="width:100%;height:100%"></div>
 						  </div>
 					  </div>
 					  <div class="right">
@@ -227,32 +228,32 @@
 			</div>
 		</div>
 	</body>
-	<!--<script>-->
-        <!--function initialize()-->
-        <!--{-->
-            <!--var mapProp = {-->
-                <!--center:new google.maps.LatLng(51.508742,-0.120850),-->
-                <!--zoom:5,-->
-                <!--mapTypeId:google.maps.MapTypeId.ROADMAP-->
-            <!--};-->
-            <!--var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);-->
+	<script>
+        function initialize()
+        {
+            var mapProp = {
+                center:new google.maps.LatLng(14.74771,121.02198),
+                zoom:12,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("map"), mapProp);
 
-            <!--var marker = new google.maps.Marker(-->
-                <!--{-->
-                    <!--position:latlng,-->
-                    <!--map:map-->
-                <!--});-->
-            <!--// 设定标注窗口，附上注释文字-->
-            <!--var infowindow = new google.maps.InfoWindow(-->
-                <!--{-->
-                    <!--content:"SiteID"-->
-                <!--});-->
-            <!--// 打开标注窗口-->
-            <!--infowindow.open(map,marker);-->
-        <!--}-->
+            function marker(lat1,lng1){
+                var uluru = {lat:lat1, lng:lng1 };
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            };
+            $.ajax({ url:"js/json.json",async:false,context: document.body, success: function(data){
+                for(var i=0;i<data.data.length;i++){
+                    marker(data.data[i].lat,data.data[i].lng);
+                }
+            }});
 
-        <!--google.maps.event.addDomListener(window, 'load', initialize);-->
-	<!--</script>-->
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </html>
 
 
