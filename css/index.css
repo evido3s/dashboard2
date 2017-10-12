@@ -217,7 +217,7 @@ body{
 .conntent2 .top .right .one{width:100%;height:35%;}
 .conntent2 .top .right .two{width:100%;height:65%;}
 .conntent2 .top .right .one{padding-bottom:20px;box-sizing:border-box;}
-.conntent2 .top .right .one .con div{width:16.6%;height:100%;float:left}
+.conntent2 .top .right .one .con div{width:14.28%;height:100%;float:left}
 .conntent2 .con{width:100%;height:100%;background:#fff;}
 .conntent2 .top .right .two .con{width:49%;height:100%;}
 
@@ -231,6 +231,7 @@ body{
 
 .xuanze{width:250px;height:20px;margin:0 auto;position:absolute;top:13%;left:0;right:0;margin:auto;}
 .xuanze li{float:left;width:40px;height:100%;line-height:20px;text-align:center;color:#fff;border-radius:3px;font-size:10px;}
+
 .xuanze .active{border:1px solid #D3D3D3;}
 
 .conntent2 .right .con .title{font-size:18px;color:#218be2;text-align:center;padding-top:4px;box-sizing:border-box;}
@@ -238,10 +239,10 @@ body{
 	width:90%;height:82%;font-size:14px;
 	margin:0 auto;margin-top:5px;border:1px solid #d5d5d5;
 }
-.conntent2 .right .con .biaoge ul{
-	width:100%;height:16.67%;
-}
-.conntent2 .right .con .biaoge ul:first-child{color:#218be2;}
+/*.conntent2 .right .con .biaoge ul{*/
+	/*width:100%;height:16.67%;*/
+/*}*/
+.conntent2 .right .con .biaoge .title{color:#218be2;}
 .conntent2 .right .con .biaoge .oushu{
 	background:#f0f2f5;
 }

@@ -20,28 +20,40 @@
 </body>
 <script>
     function initialize()
-    {
-        var mapProp = {
-            center:new google.maps.LatLng(14.74771,121.02198),
-            zoom:12,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
-        var map=new google.maps.Map(document.getElementById("map"), mapProp);
-
-        function marker(lat1,lng1){
-            var uluru = {lat:lat1, lng:lng1 };
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        };
-        $.ajax({ url:"js/json.json",async:false,context: document.body, success: function(data){
-            for(var i=0;i<data.data.length;i++){
-                marker(data.data[i].lat,data.data[i].lng);
+   {
+        //地图初始化
+            var mapProp = {
+                center:new google.maps.LatLng(14.74771,121.02198),
+                zoom:12,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("map"), mapProp);
+        //添加经纬度打点：
+            function marker(lat1,lng1,Site_ID,Project,Cluster,PM,Team_No,Status){
+                var uluru = {lat:lat1, lng:lng1 };
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+                //调用打点上的信息
+                attachSecretMessage(marker, "Site_ID："+Site_ID+"<br/>Project："+Project+"<br/>Cluster："+Cluster+"<br/>PM："+PM+"<br/>Team_No："+Team_No+"<br/>Status："+Status);
+            };
+        //打点上的信息
+            function attachSecretMessage(marker, secretMessage) {
+               var infowindow = new google.maps.InfoWindow({
+                   content: secretMessage
+               });
+               marker.addListener('click', function() {
+                   infowindow.open(marker.get('map'), marker);
+               });
             }
-        }});
-
-    }
+        //获取标注的动态数据：
+            $.ajax({ url:"js/json.json",async:false,context: document.body, success: function(data){
+                for(var i=0;i<data.data.length;i++){
+                    marker(data.data[i].lat,data.data[i].lng,data.data[i].Site_ID,data.data[i].Project,data.data[i].Cluster,data.data[i].PM,data.data[i].Team_NO,data.data[i].Status);
+                }
+            }});
+   }
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </html>

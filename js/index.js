@@ -59,7 +59,8 @@ $('.chose .time').text(str);
 		zhu2color1=['#90cdf0','#90cdf0','#90cdf0','#90cdf0','#90cdf0','#90cdf0','#90cdf0'];
 		zhu2color2=['#e49557','#e49557','#e49557','#e49557','#e49557','#e49557','#e49557'];
 		zhu2color3=['#f3ce92','#f3ce92','#f3ce92','#f3ce92','#f3ce92','#f3ce92','#f3ce92'];
-		zhu0X=['FAC','PAC','CoC','IFM/IPM','SA','Fucn.Test','Comm/integ','Installation','MOS','PISM','TSSR','Access Granted','PO Received','Site Alloc'];
+        zhu2color4=['#84f1d9','#84f1d9','#84f1d9','#84f1d9','#84f1d9','#84f1d9','#84f1d9'];
+		zhu0X=['FAC','PAC','CoC','IFM/IPM','SA','Func.Test','Comm/integ','Installation','MOS','PISM','TSSR','Access Granted','PO Received','Site Alloc'];
 		zhu0Y1=[22,28,33,40,45,50,60,70,85,90,100,110,120,150];
 		zhu0Y2=[22,28,33,40,45,50,60,70,85,90,100,110,120,150];
 		zhu01Y1=[22,28,33,40,45,50,60,70,85,90,100,110,120,150];
@@ -77,10 +78,10 @@ $('.chose .time').text(str);
     //柱状图2；
         zhu2X=['Team','Subcon','Nokia','Operator'];
 		zhu2Y1_SA=[20,3,48,4];
+        zhu2Y1_SF=[20,3,48,4];
         zhu2Y1_PAT=[20,3,48,4];
         zhu2Y1_FAC=[20,3,48,4];
-
-		createcharts.chart2(zhu2color1,'SA',zhu2X,zhu2Y1_SA);
+        createcharts.chart2(zhu2color1,'SA',zhu2X,zhu2Y1_SA);
     //折线图；
 		zheY1_SQI=[0,0,0,0,0,13,37];
 		zheY1_SeQI=[0,0,0,0,0,0,0];
@@ -209,13 +210,17 @@ $('.chose .time').text(str);
 			var num1=0;
 			function zhu2(){
 				num1++;
-				if(num1>=3){num1=0;}
+				if(num1>=4){num1=0;}
 				$(".xuanze2 li").removeClass("active").eq(num1).addClass('active');
 				if(num1==1){
-                    createcharts.chart2(zhu2color2,'PAT',zhu2X,zhu2Y1_PAT);
+                    createcharts.chart2(zhu2color4,'SF',zhu2X,zhu2Y1_SF);
 				}else if(num1==2){
-					createcharts.chart2(zhu2color3,'FAC',zhu2X,zhu2Y1_FAC);
-				}else{createcharts.chart2(zhu2color1,'SA',zhu2X,zhu2Y1_SA);}
+                    createcharts.chart2(zhu2color2,'PAT',zhu2X,zhu2Y1_PAT);
+				}else if(num1==3){
+                    createcharts.chart2(zhu2color3,'FAC',zhu2X,zhu2Y1_FAC);
+				}else{
+                    createcharts.chart2(zhu2color1,'SA',zhu2X,zhu2Y1_SA);
+				}
 			}
 			var t1=setInterval(zhu2,5000);
 			//鼠标停留停止轮播：
@@ -229,23 +234,34 @@ $('.chose .time').text(str);
 				var index=$(this).index(".xuanze2 li");
 				$(".xuanze2 li").removeClass("active").eq(index).addClass('active');
 				if(index==1){
-                    createcharts.chart2(zhu2color2,'PAT',zhu2X,zhu2Y1_PAT);
+                    createcharts.chart2(zhu2color4,'SF',zhu2X,zhu2Y1_SF);
 				}else if(index==2){
+                    createcharts.chart2(zhu2color2,'PAT',zhu2X,zhu2Y1_PAT);
+				}else if(index==3){
                     createcharts.chart2(zhu2color3,'FAC',zhu2X,zhu2Y1_FAC);
 				}else{
                     createcharts.chart2(zhu2color1,'SA',zhu2X,zhu2Y1_SA);
 				}
-
 			});
 
 	//表格:
-	    $(".Npo_Ni3 li").click(function(){
-	    	var index=$(this).index(".Npo_Ni3 li");
-            $(".Npo_Ni3 li").removeClass("active").eq(index).addClass("active");
-            if(index==0){
-                $(".biaoge2").hide(); $(".biaoge1").show();
+	    var ulHeight=$(".conntent2 .right .con .biaoge").height()*0.1667;
+        $(".conntent2 .right .con .biaoge ul").css({"height":ulHeight+"px"});
+        $(".conntent2 .right .con .biaoge ul li").css({"line-height":ulHeight+"px"});
+        var huadongBoxHeight=ulHeight*5;
+        $(".conntent2 .huadongBox").css({"height":huadongBoxHeight+"px"});
+        var huadongHeight=ulHeight*$(".conntent2 .huadong ul").length;
+        $(".conntent2 .huadong").css({"height":huadongHeight+"px"});
+        // 5s向上滑动:
+		var rollnum=0;
+		var time = setInterval(rollFn,3000);
+		function rollFn() {
+			rollnum += huadongBoxHeight;
+			if (rollnum >= huadongHeight) {
+				rollnum = 0;
+				$(".conntent2 .huadong").css({'top': -rollnum + 'px', 'transition': 'top 0s'})
 			}else{
-                $(".biaoge1").hide(); $(".biaoge2").show();
+				$(".conntent2 .huadong").css({'top': -rollnum + 'px', 'transition': 'top 1s'})
 			}
-        });
+		}
 });
