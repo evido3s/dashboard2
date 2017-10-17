@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>map6</title>
+    <title>map</title>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAjfQ-KPy1yDgt2XvTY9Yen1LZ4MxG9ntA&sensor=false"></script>
     <style>
@@ -48,12 +48,14 @@
                });
             }
         //获取标注的动态数据：
-            $.ajax({ url:"js/json.json",async:false,context: document.body, success: function(data){
+            var url = "http://123.207.219.175:8400/map_json/"
+            $.ajax({ url:url,async:false,context: document.body, success: function(data){
                 for(var i=0;i<data.data.length;i++){
                     marker(data.data[i].lat,data.data[i].lng,data.data[i].Site_ID,data.data[i].Project,data.data[i].Cluster,data.data[i].PM,data.data[i].Team_NO,data.data[i].Status);
                 }
             }});
    }
-    google.maps.event.addDomListener(window, 'load', initialize);
+   google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
 </html>
